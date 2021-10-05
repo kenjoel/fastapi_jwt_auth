@@ -30,3 +30,5 @@ PyMySQL~=1.0.2
 psycopg2~=2.8.6
 passlib~=1.7.4
 jose~=1.0.0
+motor~=2.5.1
+databases~=0.5.2
