@@ -1,6 +1,6 @@
 from typing import Optional
 
-from fastapi import FastAPI, Depends
+from fastapi import Depends
 from fastapi_users import BaseUserManager
 from requests import Request
 

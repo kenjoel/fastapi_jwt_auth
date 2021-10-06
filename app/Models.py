@@ -8,6 +8,10 @@ class User(models.BaseUser):
     first_name = str
     birthday = Optional[datetime.date]
 
+    class Config:
+        arbitrary_types_allowed = True
+        orm_mode = True
+
 
 class UserCreate(models.BaseUserCreate):
     first_name = str
@@ -20,4 +24,8 @@ class UserUpdate(models.BaseUserUpdate):
 
 
 class UserDB(User, models.BaseUserDB):
+    pass
+
+
+class SUser(models.BaseUser, models.BaseOAuthAccountMixin):
     pass

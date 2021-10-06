@@ -1,7 +1,7 @@
 import databases
-from fastapi_users_db_sqlalchemy import SQLAlchemyBaseUserTable, SQLAlchemyUserDatabase
+from fastapi_users_db_sqlalchemy import SQLAlchemyBaseUserTable, SQLAlchemyUserDatabase, SQLAlchemyBaseOAuthAccountTable
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base, DeclarativeMeta
+from sqlalchemy.orm import declarative_base, DeclarativeMeta
 
 from authentication.Models import UserDB
 
@@ -20,8 +20,13 @@ class UserTable(Base, SQLAlchemyBaseUserTable):
     pass
 
 
+class OAuthAccount(Base, SQLAlchemyBaseOAuthAccountTable):
+    pass
+
+
 users = UserTable.__table__
+oauth_accounts = OAuthAccount.__table__
 
 
 def get_user_db():
-    yield SQLAlchemyUserDatabase(UserDB, database, users)
+    yield SQLAlchemyUserDatabase(UserDB, database, users, oauth_accounts)
