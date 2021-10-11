@@ -13,8 +13,8 @@ from models import User, UserCreate, UserDB, UserUpdate
 SECRET = "SECRET"
 
 google_oauth_client = GoogleOAuth2(
-    os.environ["GOOGLE_OAUTH_CLIENT_ID"],
-    os.environ["GOOGLE_OAUTH_CLIENT_SECRET"],
+    os.environ['GOOGLE_OAUTH_CLIENT_ID'],
+    os.environ['GOOGLE_OAUTH_CLIENT_SECRET'],
 )
 
 
